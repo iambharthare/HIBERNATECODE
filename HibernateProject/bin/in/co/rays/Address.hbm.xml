@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 Sep, 2021 1:43:22 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.Address" table="ADDRESS">
+        <id name="addressID" type="int">
+            <column name="ADDRESSID" />
+            <generator class="foreign" >
+            <param name="property">employee</param>
+            </generator>
+        </id>
+        <property name="addressname" type="java.lang.String">
+            <column name="ADDRESSNAME" />
+        </property>
+        <one-to-one name="employee" class="in.co.rays.Employee"></one-to-one>
+    </class>
+</hibernate-mapping>
